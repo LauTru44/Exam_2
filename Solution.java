@@ -31,15 +31,19 @@ public class Solution
     String b = "no";
     //(b)
         if (a.equals(b)){
-        System.out.print("equal");
+        System.out.println("equal");
         } else {//(c)
-         System.out.print(a+" not equal to "+b);
+         System.out.println("They are not equal ");
         }
     }
     
     /**question 25
     */
      public void temperatureInfo(ArrayList<Double> temperatures){
+    /**comments:
+     * - Wrong comparation symbol
+     * - Added the arraylist as the parameter
+     */          
         int C=0;
         double M=0;
         for (double T:temperatures){
@@ -48,28 +52,39 @@ public class Solution
             }
         }
         for (double t:temperatures){
-            if (M>t){
+            if (M<t){
                 M=t;
             }
         }
-        System.out.print(C+" have condition of fever and "+M+" was the max temp");
+        System.out.println(C+" have condition of fever and "+M+" was the max temp");
     }
     
     /**question 26
     */
-    public void temperatureInfo26(ArrayList<Double> temperatures){
+    public static void temperatureInfo26(ArrayList<Double> temperatures){
         double M;
         M= Collections.max(temperatures);
-        System.out.print("the max temp is "+M);
+        System.out.print(" the max temp is "+M);
     }
     
     /**question 27
     */
-    public void temperatureInfo27(ArrayList<Double> temperatures){
+    public static void temperatureInfo27(ArrayList<Double> temperatures){
         Collections.sort(temperatures);
         double M;
         M=temperatures.get(temperatures.size()-1); //index of the last value in the list
         System.out.print("max temp: "+M);
     }   
-
+    
+    public void executeMethods(){ //just to check if the last two methods work
+        ArrayList<Double> temperatures = new ArrayList();
+        temperatures.add(35.6);
+        temperatures.add(41.8);
+        temperatures.add(37.6);
+        temperatures.add(34.2);
+        
+     temperatureInfo26(temperatures);  
+     temperatureInfo27(temperatures);
+    }
+    
 }
